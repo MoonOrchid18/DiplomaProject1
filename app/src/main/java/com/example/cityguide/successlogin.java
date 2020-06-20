@@ -14,11 +14,12 @@ public class successlogin extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_successlogin);
     }
     @Override
-    public void onClick(View v) {
-        if (v.getId() == R.id.close) {
-            finish();
-            startActivity(new Intent(this, choose_city_activity.class));
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.close:
+                finish();
+                startActivity(new Intent(this, choose_city_activity.class));
+                break;
         }
-    }
+    }}
 
-}

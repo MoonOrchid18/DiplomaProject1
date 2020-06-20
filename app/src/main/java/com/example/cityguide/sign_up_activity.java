@@ -76,7 +76,8 @@ public class sign_up_activity extends AppCompatActivity implements View.OnClickL
                     finish();
                     startActivity(new Intent(sign_up_activity.this, successlogin.class));
                 } else {
-                    Toast.makeText(getApplicationContext(), "error", Toast.LENGTH_SHORT).show();
+                    finish();
+                    startActivity(new Intent(sign_up_activity.this, error.class));
 
                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                         Toast.makeText(getApplicationContext(), "You are already registered", Toast.LENGTH_SHORT).show();

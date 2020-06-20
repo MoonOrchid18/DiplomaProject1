@@ -32,18 +32,20 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <ImageView
+    <ImageButton
         android:id="@+id/close"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="400dp"
         android:layout_marginTop="190dp"
         android:layout_marginEnd="90dp"
+        android:clickable="true"
+        android:background="@drawable/clase"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
         app:layout_constraintEnd_toStartOf="@+id/rectangle_3"
-        app:layout_constraintHorizontal_bias="0.21"
+        app:layout_constraintHorizontal_bias="0.272"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.19999999"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_baseline_close_24" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -112,7 +112,10 @@ public class MainActivity<mGoogleSignInClient, gso> extends AppCompatActivity im
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                     startActivity(intent);
                 } else {
-                    Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                    finish();
+                    Intent intent = new Intent(MainActivity.this, error.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
                 }
             }
         });
