@@ -39,7 +39,7 @@
         android:layout_marginStart="400dp"
         android:layout_marginTop="190dp"
         android:layout_marginEnd="90dp"
-        android:clickable="true"
+        android:onClick="onClick"
         android:background="@drawable/clase"
         app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
         app:layout_constraintEnd_toStartOf="@+id/rectangle_3"
