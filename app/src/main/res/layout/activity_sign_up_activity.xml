@@ -17,6 +17,7 @@
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="70dp"
         android:background="@drawable/solidbutton"
+        android:onClick="onClick"
         android:text="Sign up"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"

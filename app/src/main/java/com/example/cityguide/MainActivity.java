@@ -210,11 +210,13 @@ public class MainActivity<mGoogleSignInClient, gso> extends AppCompatActivity im
                 overridePendingTransition(R.anim.slidein, R.anim.slideout);
                 break;
 
-            case R.id.signbtn:
+            case R.id.signinbtn:
                 userLogin();
                 break;
         }
     }
+
+
 }
 
 

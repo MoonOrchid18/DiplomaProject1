@@ -59,7 +59,8 @@ public class sign_up_activity extends AppCompatActivity implements View.OnClickL
         PasswordUser = findViewById(R.id.PasswordUser);
         mAuth = FirebaseAuth.getInstance();
     }
-    public void onClickSignUp(View view)
+
+    private void signup()
     {
         if(!TextUtils.isEmpty(EmailUser.getText().toString()) && !TextUtils.isEmpty(PasswordUser.getText().toString()))
         {
@@ -73,34 +74,15 @@ public class sign_up_activity extends AppCompatActivity implements View.OnClickL
                     }
                     else
                     {
-                        Intent intent = new Intent(sign_up_activity.this, error.class);
-                        startActivity(intent);
+                        Toast.makeText(getApplicationContext(), "User SignIn failed", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
 
         }
-        else
-        {
-            Toast.makeText(getApplicationContext(), "Please enter Email and Password", Toast.LENGTH_SHORT).show();
-        }
+
     }
-    public void onClickSignIn(View view)
-    {
-        if(!TextUtils.isEmpty(EmailUser.getText().toString()) && !TextUtils.isEmpty(PasswordUser.getText().toString())) {
-            mAuth.signInWithEmailAndPassword(EmailUser.getText().toString(), PasswordUser.getText().toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if (task.isSuccessful()) {
-                        Intent intent = new Intent(sign_up_activity.this, successlogin.class);
-                        startActivity(intent);
-                    } else {
-                        Intent intent = new Intent(sign_up_activity.this, error.class);
-                        startActivity(intent);
-                    }
-                }
-            });
-        }}
+
 
     @Override
     public void onClick(View view) {
@@ -108,8 +90,13 @@ public class sign_up_activity extends AppCompatActivity implements View.OnClickL
             case R.id.signinswitch:
                 finish();
                 startActivity(new Intent(this, MainActivity.class));
-                overridePendingTransition(R.anim.slidein, R.anim.slideout);
                 break;
+            case R.id.signbtn:
+                signup();
+                break;
+
+
+
         }
     }
 }

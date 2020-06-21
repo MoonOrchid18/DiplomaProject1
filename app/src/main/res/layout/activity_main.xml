@@ -8,7 +8,7 @@
     tools:context=".MainActivity">
 
     <Button
-        android:id="@+id/signbtn"
+        android:id="@+id/signinbtn"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
