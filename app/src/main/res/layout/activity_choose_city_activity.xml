@@ -35,7 +35,6 @@
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="19dp"
         android:background="@drawable/buttons"
-
         android:text="Коломия"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/franyk"
@@ -70,7 +69,6 @@
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="19dp"
         android:background="@drawable/buttons"
-
         android:text="Косів"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/vorokhta"

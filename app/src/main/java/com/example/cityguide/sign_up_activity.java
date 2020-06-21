@@ -82,19 +82,25 @@ public class sign_up_activity extends AppCompatActivity implements View.OnClickL
                     if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                         Toast.makeText(getApplicationContext(), "You are already registered", Toast.LENGTH_SHORT).show();
 
-                    } else {
                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                     }
 
-                }
-            }
+
+                } }
+
         });
 
     }
 
 
     @Override
-    public void onClick(View v) {
-
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.signinswitch:
+                finish();
+                startActivity(new Intent(this, MainActivity.class));
+                overridePendingTransition(R.anim.slidein, R.anim.slideout);
+                break;
+        }
     }
 }

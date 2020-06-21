@@ -6,5 +6,160 @@
     android:layout_height="match_parent"
     android:background="@drawable/franyk"
     tools:context=".Franyk">
+    <TextView
+        android:id="@+id/header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="132dp"
+        android:layout_marginEnd="177dp"
+        android:layout_marginBottom="85dp"
+        android:text="Оберіть категорію місця"
+        android:textColor="#ffffff"
+        android:textSize="25sp"
+        app:layout_constraintBottom_toTopOf="@+id/kolomyya"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
+    <Button
+        android:id="@+id/kolomyya"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/buttons"
+
+        android:text="Де зупинитись?"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/franyk"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/franyk"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/buttons"
+        android:text="Місця для розваг"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/kosiv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/kosiv"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/buttons"
+
+        android:text="Шопінг"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/vorokhta"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/vorokhta"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="21dp"
+        android:background="@drawable/buttons"
+        android:text="Музеї"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/yaremche"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/yaremche"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="19dp"
+        android:background="@drawable/buttons"
+
+        android:text="Кінотеатри"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toTopOf="@+id/bukovel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/bukovel"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="148dp"
+        android:background="@drawable/buttons"
+        android:text="Заклади харчування"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/top7"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="96dp"
+        android:background="@drawable/buttons"
+        android:text="Топ-7 визначних місць"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.45"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bukovel" />
+
+    <Button
+        android:id="@+id/fortune"
+        android:layout_width="290dp"
+        android:layout_height="40dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="19dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="32dp"
+        android:background="@drawable/buttons"
+        android:text="Колесо фортуни"
+        android:textColor="#FFFFFF"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.529"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/top7" />
 </androidx.constraintlayout.widget.ConstraintLayout>
