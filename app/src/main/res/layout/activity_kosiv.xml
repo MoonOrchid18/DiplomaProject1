@@ -33,7 +33,7 @@
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="19dp"
         android:background="@drawable/buttons"
-
+        android:onClick="onClick"
         android:text="Де зупинитись?"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/franyk"
@@ -53,6 +53,7 @@
         android:background="@drawable/buttons"
         android:text="Місця для розваг"
         android:textColor="#FFFFFF"
+        android:onClick="onClick"
         app:layout_constraintBottom_toTopOf="@+id/kosiv"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -67,7 +68,7 @@
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="19dp"
         android:background="@drawable/buttons"
-
+        android:onClick="onClick"
         android:text="Визначні місця"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/vorokhta"
@@ -86,6 +87,7 @@
         android:layout_marginBottom="21dp"
         android:background="@drawable/buttons"
         android:text="Музеї"
+        android:onClick="onClick"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/yaremche"
         app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +103,7 @@
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="19dp"
         android:background="@drawable/buttons"
-
+        android:onClick="onClick"
         android:text="Кінотеатри"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/bukovel"
@@ -118,6 +120,7 @@
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="148dp"
         android:background="@drawable/buttons"
+        android:onClick="onClick"
         android:text="Заклади харчування"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"

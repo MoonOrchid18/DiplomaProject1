@@ -6,19 +6,21 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-public class Kosiv extends AppCompatActivity implements View.OnClickListener {
+public class bukovel_places extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_kosiv);
+        setContentView(R.layout.activity_bukovel_places);
     }
     @Override
     public void onClick(View view) {
         switch (view.getId()) {
-            case R.id.kosiv:
-                startActivity(new Intent(this, kosiv_places.class));
+            case R.id.bukovel:
+
+                startActivity(new Intent(this, bukovel_places.class));
                 break;
         }
+
     }
 }

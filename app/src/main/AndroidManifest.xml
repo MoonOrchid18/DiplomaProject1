@@ -10,7 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".bukovel"/>
+        <activity android:name=".yaremche_places"></activity>
+        <activity android:name=".vorokhta_places" />
+        <activity android:name=".bukovel_places" />
+        <activity android:name=".franyk_places" />
+        <activity android:name=".kosiv_places" />
+        <activity android:name=".kolomyya_places" />
+        <activity android:name=".bukovel" />
         <activity android:name=".yaremche" />
         <activity android:name=".Vorokhta" />
         <activity android:name=".Kosiv" />

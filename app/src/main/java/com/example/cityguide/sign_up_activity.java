@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
 import android.widget.EditText;
@@ -15,11 +16,12 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
+import com.google.firebase.auth.FirebaseUser;
 
 public class sign_up_activity extends AppCompatActivity implements View.OnClickListener
 {
 
-    EditText EmailUser, PasswordUser;
+    private EditText EmailUser, PasswordUser;
 
     private FirebaseAuth mAuth;
 
@@ -28,8 +30,7 @@ public class sign_up_activity extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_activity);
 
-        EmailUser = (EditText) findViewById(R.id.EmailUser);
-        PasswordUser = (EditText) findViewById(R.id.PasswordUser);
+      init();
 
 
         mAuth = FirebaseAuth.getInstance();
@@ -38,60 +39,68 @@ public class sign_up_activity extends AppCompatActivity implements View.OnClickL
         findViewById(R.id.signinswitch).setOnClickListener(this);
     }
 
-    private void registerUser() {
-        String email = EmailUser.getText().toString().trim();
-        String password = PasswordUser.getText().toString().trim();
-
-        if (email.isEmpty()) {
-            EmailUser.setError("Email is required");
-            EmailUser.requestFocus();
-            return;
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        if(currentUser != null)
+        {
+            Toast.makeText(this, "User not null", Toast.LENGTH_SHORT).show();
         }
-
-        if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
-            EmailUser.setError("Please enter a valid email");
-            EmailUser.requestFocus();
-            return;
+        else
+        {
+            Toast.makeText(this, "User null", Toast.LENGTH_SHORT).show();
         }
-
-        if (password.isEmpty()) {
-            PasswordUser.setError("Password is required");
-            PasswordUser.requestFocus();
-            return;
-        }
-
-        if (password.length() < 6) {
-            PasswordUser.setError("Minimum lenght of password should be 6");
-            PasswordUser.requestFocus();
-            return;
-        }
-
-
-
-        mAuth.createUserWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-            @Override
-            public void onComplete(@NonNull Task<AuthResult> task) {
-
-                if (task.isSuccessful()) {
-                    finish();
-                    startActivity(new Intent(sign_up_activity.this, successlogin.class));
-                } else {
-                    finish();
-                    startActivity(new Intent(sign_up_activity.this, error.class));
-
-                    if (task.getException() instanceof FirebaseAuthUserCollisionException) {
-                        Toast.makeText(getApplicationContext(), "You are already registered", Toast.LENGTH_SHORT).show();
-
-                        Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-
-
-                } }
-
-        });
-
     }
 
+    private void init()
+    {
+        EmailUser = findViewById(R.id.EmailUser);
+        PasswordUser = findViewById(R.id.PasswordUser);
+        mAuth = FirebaseAuth.getInstance();
+    }
+    public void onClickSignUp(View view)
+    {
+        if(!TextUtils.isEmpty(EmailUser.getText().toString()) && !TextUtils.isEmpty(PasswordUser.getText().toString()))
+        {
+            mAuth.createUserWithEmailAndPassword(EmailUser.getText().toString(),PasswordUser.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful())
+                    {
+                        Intent intent = new Intent(sign_up_activity.this, successlogin.class);
+                        startActivity(intent);
+                    }
+                    else
+                    {
+                        Intent intent = new Intent(sign_up_activity.this, error.class);
+                        startActivity(intent);
+                    }
+                }
+            });
+
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(), "Please enter Email and Password", Toast.LENGTH_SHORT).show();
+        }
+    }
+    public void onClickSignIn(View view)
+    {
+        if(!TextUtils.isEmpty(EmailUser.getText().toString()) && !TextUtils.isEmpty(PasswordUser.getText().toString())) {
+            mAuth.signInWithEmailAndPassword(EmailUser.getText().toString(), PasswordUser.getText().toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Intent intent = new Intent(sign_up_activity.this, successlogin.class);
+                        startActivity(intent);
+                    } else {
+                        Intent intent = new Intent(sign_up_activity.this, error.class);
+                        startActivity(intent);
+                    }
+                }
+            });
+        }}
 
     @Override
     public void onClick(View view) {
