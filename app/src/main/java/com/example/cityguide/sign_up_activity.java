@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Patterns;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -60,28 +61,7 @@ public class sign_up_activity extends AppCompatActivity implements View.OnClickL
         mAuth = FirebaseAuth.getInstance();
     }
 
-    private void signup()
-    {
-        if(!TextUtils.isEmpty(EmailUser.getText().toString()) && !TextUtils.isEmpty(PasswordUser.getText().toString()))
-        {
-            mAuth.createUserWithEmailAndPassword(EmailUser.getText().toString(),PasswordUser.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                @Override
-                public void onComplete(@NonNull Task<AuthResult> task) {
-                    if(task.isSuccessful())
-                    {
-                        Intent intent = new Intent(sign_up_activity.this, successlogin.class);
-                        startActivity(intent);
-                    }
-                    else
-                    {
-                        Toast.makeText(getApplicationContext(), "User SignIn failed", Toast.LENGTH_SHORT).show();
-                    }
-                }
-            });
 
-        }
-
-    }
 
 
     @Override
@@ -91,9 +71,7 @@ public class sign_up_activity extends AppCompatActivity implements View.OnClickL
                 finish();
                 startActivity(new Intent(this, MainActivity.class));
                 break;
-            case R.id.signbtn:
-                signup();
-                break;
+
 
 
 
