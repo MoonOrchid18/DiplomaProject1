@@ -7,6 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.util.Patterns;
 import android.view.View;
+import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -19,7 +20,6 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.common.SignInButton;
 import com.google.android.gms.common.api.ApiException;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -29,11 +29,12 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
 
-public class MainActivity<mGoogleSignInClient, gso> extends AppCompatActivity implements View.OnClickListener {
+public class MainActivity extends AppCompatActivity  {
 
     FirebaseAuth mAuth;
     private GoogleSignInClient mGoogleSignInClient;
     Button signgoogle;
+    Button signupswitch;
     EditText EnterEmail, EnterPassword;
     private int RC_SIGN_IN = 1;
 
@@ -49,13 +50,13 @@ public class MainActivity<mGoogleSignInClient, gso> extends AppCompatActivity im
         EnterEmail = (EditText) findViewById(R.id.EnterEmail);
         EnterPassword = (EditText) findViewById(R.id.EnterPassword);
 
-
-        findViewById(R.id.signupswitch).setOnClickListener(this);
-        findViewById(R.id.signbtn).setOnClickListener(this);
-        findViewById(R.id.google_signinbtn).setOnClickListener(this);
+//
+//        findViewById(R.id.signupswitch).setOnClickListener(this);
+//        findViewById(R.id.signbtn).setOnClickListener(this);
+//        findViewById(R.id.google_signinbtn).setOnClickListener(this);
         mAuth = FirebaseAuth.getInstance();
-        signgoogle= findViewById(R.id.google_signinbtn);
-
+        signgoogle= findViewById(R.id.google_sign_btn);
+        signupswitch=findViewById(R.id.signupswitch);
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
@@ -63,7 +64,7 @@ public class MainActivity<mGoogleSignInClient, gso> extends AppCompatActivity im
 
         mGoogleSignInClient = GoogleSignIn.getClient(this, gso);
 
-        signgoogle.setOnClickListener(new View.OnClickListener() {
+        signgoogle.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
                 signIn();
@@ -121,15 +122,15 @@ public class MainActivity<mGoogleSignInClient, gso> extends AppCompatActivity im
         });
     }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-
-        if (mAuth.getCurrentUser() != null) {
-            finish();
-            startActivity(new Intent(this, successlogin.class));
-        }
-    }
+//    @Override
+//    protected void onStart() {
+////        super.onStart();
+////
+////        if (mAuth.getCurrentUser() != null) {
+//////            finish();
+//////            startActivity(new Intent(this, successlogin.class));
+////        }
+//    }
 
 
     private void signIn(){
@@ -151,8 +152,6 @@ public class MainActivity<mGoogleSignInClient, gso> extends AppCompatActivity im
 
             GoogleSignInAccount acc = completedTask.getResult(ApiException.class);
             FirebaseGoogleAuth(acc);
-            Intent intent = new Intent(MainActivity.this, successlogin.class);
-            startActivity(intent);
         }
         catch (ApiException e){
             Toast.makeText(MainActivity.this,"Sign In Failed",Toast.LENGTH_SHORT).show();
@@ -201,20 +200,12 @@ public class MainActivity<mGoogleSignInClient, gso> extends AppCompatActivity im
 
     }
 
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.signupswitch:
-                finish();
-                startActivity(new Intent(this, sign_up_activity.class));
-                overridePendingTransition(R.anim.slidein, R.anim.slideout);
-                break;
+//    @Override
 
-            case R.id.signinbtn:
-                userLogin();
-                break;
-        }
-    }
+/*public void onClickSwitch(View view) {
+    Intent intent = new Intent(MainActivity.this, activity_for_login.class);
+    startActivity(intent);
+}*/
 
 
 }

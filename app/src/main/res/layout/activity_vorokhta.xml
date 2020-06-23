@@ -7,7 +7,7 @@
     android:background="@drawable/vorokhta"
     tools:context=".Vorokhta">
     <TextView
-        android:id="@+id/header"
+        android:id="@+id/header_v"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="177dp"
@@ -16,16 +16,15 @@
         android:layout_marginBottom="85dp"
         android:text="Оберіть категорію місця"
         android:textColor="#ffffff"
-        android:onClick="onClick"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/kolomyya"
+        app:layout_constraintBottom_toTopOf="@+id/stay_v"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/kolomyya"
+        android:id="@+id/stay_v"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -33,17 +32,16 @@
         android:layout_marginStart="35dp"
         android:layout_marginTop="82dp"
         android:layout_marginEnd="35dp"
-        android:onClick="onClick"
         android:background="@drawable/buttons"
         android:text="Де зупинитись?"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header" />
+        app:layout_constraintTop_toBottomOf="@+id/header_v" />
 
     <Button
-        android:id="@+id/franyk"
+        android:id="@+id/joy_v"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -53,14 +51,13 @@
         android:layout_marginEnd="35dp"
         android:background="@drawable/buttons"
         android:text="Місця для розваг"
-        android:onClick="onClick"
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kolomyya" />
+        app:layout_constraintTop_toBottomOf="@+id/stay_v" />
 
     <Button
-        android:id="@+id/vorokhta"
+        android:id="@+id/museum_v"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -70,15 +67,15 @@
         android:layout_marginEnd="35dp"
         android:background="@drawable/buttons"
         android:text="Музеї"
-        android:onClick="onClick"
+
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/franyk" />
+        app:layout_constraintTop_toBottomOf="@+id/joy_v" />
 
     <Button
-        android:id="@+id/bukovel"
+        android:id="@+id/food_v"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -88,13 +85,13 @@
         android:layout_marginEnd="35dp"
         android:background="@drawable/buttons"
         android:text="Заклади харчування"
-        android:onClick="onClick"
+
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.506"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/vorokhta"
+        app:layout_constraintTop_toBottomOf="@+id/museum_v"
         app:layout_constraintVertical_bias="0.0" />
 
     <Button
@@ -107,7 +104,7 @@
         android:layout_marginTop="19dp"
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="96dp"
-        android:onClick="onClick"
+
         android:background="@drawable/buttons"
         android:text="Топ-7 визначних місць"
         android:textColor="#FFFFFF"
@@ -115,7 +112,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.431"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bukovel"
+        app:layout_constraintTop_toBottomOf="@+id/food_v"
         app:layout_constraintVertical_bias="0.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

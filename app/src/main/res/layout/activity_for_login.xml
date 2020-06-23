@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/first_image"
-    tools:context=".MainActivity">
+    tools:context=".activity_for_login">
 
     <Button
         android:id="@+id/signbtn"

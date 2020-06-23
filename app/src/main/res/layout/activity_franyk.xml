@@ -7,7 +7,7 @@
     android:background="@drawable/franyk"
     tools:context=".Franyk">
     <TextView
-        android:id="@+id/header"
+        android:id="@+id/header1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="177dp"
@@ -17,14 +17,14 @@
         android:text="Оберіть категорію місця"
         android:textColor="#ffffff"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/kolomyya"
+        app:layout_constraintBottom_toTopOf="@+id/stay_f"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/kolomyya"
+        android:id="@+id/stay_f"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -36,13 +36,13 @@
         android:onClick="onClick"
         android:text="Де зупинитись?"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/franyk"
+        app:layout_constraintBottom_toTopOf="@+id/joy_f"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/franyk"
+        android:id="@+id/joy_f"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -54,12 +54,12 @@
         android:text="Місця для розваг"
         android:textColor="#FFFFFF"
         android:onClick="onClick"
-        app:layout_constraintBottom_toTopOf="@+id/kosiv"
+        app:layout_constraintBottom_toTopOf="@+id/shop_f"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/kosiv"
+        android:id="@+id/shop_f"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -71,13 +71,13 @@
         android:onClick="onClick"
         android:text="Шопінг"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/vorokhta"
+        app:layout_constraintBottom_toTopOf="@+id/museum_f"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/vorokhta"
+        android:id="@+id/museum_f"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -89,12 +89,12 @@
         android:text="Музеї"
         android:onClick="onClick"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/yaremche"
+        app:layout_constraintBottom_toTopOf="@+id/cinema_f"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/yaremche"
+        android:id="@+id/cinema_f"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -106,12 +106,12 @@
         android:onClick="onClick"
         android:text="Кінотеатри"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/bukovel"
+        app:layout_constraintBottom_toTopOf="@+id/food_f"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/bukovel"
+        android:id="@+id/food_f"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -139,28 +139,28 @@
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="96dp"
         android:background="@drawable/buttons"
+        android:onClick="onClick"
         android:text="Топ-7 визначних місць"
         android:textColor="#FFFFFF"
-        android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bukovel" />
+        app:layout_constraintTop_toBottomOf="@+id/food_f" />
 
     <Button
-        android:id="@+id/fortune"
+        android:id="@+id/fortune_1"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginStart="35dp"
-        android:layout_marginTop="19dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="32dp"
         android:background="@drawable/buttons"
-        android:text="Колесо фортуни"
         android:onClick="onClick"
+        android:text="Колесо фортуни"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
