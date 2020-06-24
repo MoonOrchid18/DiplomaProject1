@@ -1,50 +1,37 @@
 package com.example.cityguide;
-
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.util.Patterns;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 
-public class sign_up_activity extends AppCompatActivity implements View.OnClickListener
-{
-
-    private EditText EmailUser, PasswordUser;
-
+public class LoginActivity extends AppCompatActivity {
+    private EditText edLogin, edPassword;
     private FirebaseAuth mAuth;
-
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sign_up_activity);
+        init();
 
-      init();
-
-
-        mAuth = FirebaseAuth.getInstance();
-
-        findViewById(R.id.signbtn).setOnClickListener(this);
-        findViewById(R.id.signinswitch).setOnClickListener(this);
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        if(currentUser != null)
+        FirebaseUser cUser = mAuth.getCurrentUser();
+        if(cUser != null)
         {
             Toast.makeText(this, "User not null", Toast.LENGTH_SHORT).show();
         }
@@ -56,25 +43,57 @@ public class sign_up_activity extends AppCompatActivity implements View.OnClickL
 
     private void init()
     {
-        EmailUser = findViewById(R.id.EmailUser);
-        PasswordUser = findViewById(R.id.PasswordUser);
+        edLogin = findViewById(R.id.EmailUser);
+        edPassword = findViewById(R.id.PasswordUser);
         mAuth = FirebaseAuth.getInstance();
     }
-
-
-
-
-    @Override
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.signinswitch:
-                finish();
-                startActivity(new Intent(this, MainActivity.class));
-                break;
-
-
-
+    public void onClickSignUp(View view)
+    {
+        if(!TextUtils.isEmpty(edLogin.getText().toString()) && !TextUtils.isEmpty(edPassword.getText().toString()))
+        {
+            mAuth.createUserWithEmailAndPassword(edLogin.getText().toString(),edPassword.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if(task.isSuccessful())
+                    {
+                        Toast.makeText(getApplicationContext(), "User SignUp Successful", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Toast.makeText(getApplicationContext(), "User SignUp failed", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
 
         }
+        else
+        {
+            Toast.makeText(getApplicationContext(), "Please entre Email and Password", Toast.LENGTH_SHORT).show();
+        }
     }
-}
+    public void onClickSignIn(View view) {
+        if (!TextUtils.isEmpty(edLogin.getText().toString()) && !TextUtils.isEmpty(edPassword.getText().toString())) {
+            mAuth.signInWithEmailAndPassword(edLogin.getText().toString(), edPassword.getText().toString()).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "User SignIn Successful", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "User SignIn failed", Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+
+        }}
+            @Override
+            public void onClick (View view){
+                switch (view.getId()) {
+                    case R.id.signinswitch:
+                        finish();
+                        startActivity(new Intent(this, MainActivity.class));
+                        break;
+
+
+                }
+            }
+        }

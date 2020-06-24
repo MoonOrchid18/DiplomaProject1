@@ -206,7 +206,7 @@ public class MainActivity<mGoogleSignInClient, gso> extends AppCompatActivity im
         switch (view.getId()) {
             case R.id.signupswitch:
                 finish();
-                startActivity(new Intent(this, sign_up_activity.class));
+                startActivity(new Intent(this, sign_.class));
                 overridePendingTransition(R.anim.slidein, R.anim.slideout);
                 break;
 
