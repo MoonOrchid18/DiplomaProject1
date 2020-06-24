@@ -10,7 +10,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".yaremche_places"></activity>
+        <activity android:name=".activity_for_login"></activity>
+
+        <activity android:name=".yaremche_places" />
         <activity android:name=".vorokhta_places" />
         <activity android:name=".bukovel_places" />
         <activity android:name=".franyk_places" />
@@ -29,7 +31,7 @@
         <activity android:name=".choosenplace" />
         <activity android:name=".places" />
         <activity android:name=".choose_city_activity" />
-        <activity android:name=".sign_up_activity" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/kolomyya"
+        android:id="@+id/stay"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -54,10 +54,10 @@
         android:textColor="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kolomyya" />
+        app:layout_constraintTop_toBottomOf="@+id/stay" />
 
     <Button
-        android:id="@+id/kosiv"
+        android:id="@+id/shopping"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -76,7 +76,7 @@
 
 
     <Button
-        android:id="@+id/bukovel"
+        android:id="@+id/food"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -93,7 +93,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.49"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/kosiv"
+        app:layout_constraintTop_toBottomOf="@+id/shopping"
         app:layout_constraintVertical_bias="0.041" />
 
     <Button
@@ -113,6 +113,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.529"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bukovel"
+        app:layout_constraintTop_toBottomOf="@+id/food"
         app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

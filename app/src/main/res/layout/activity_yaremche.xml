@@ -7,7 +7,7 @@
     tools:context=".yaremche"
     android:background="@drawable/yaremche">
     <TextView
-        android:id="@+id/header"
+        android:id="@+id/header_ya"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="177dp"
@@ -17,14 +17,14 @@
         android:text="Оберіть категорію місця"
         android:textColor="#ffffff"
         android:textSize="25sp"
-        app:layout_constraintBottom_toTopOf="@+id/kolomyya"
+        app:layout_constraintBottom_toTopOf="@+id/stay_ya"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/kolomyya"
+        android:id="@+id/stay_ya"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -35,13 +35,13 @@
         android:background="@drawable/buttons"
         android:text="Де зупинитись?"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/franyk"
+        app:layout_constraintBottom_toTopOf="@+id/joy_ya"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/franyk"
+        android:id="@+id/joy_ya"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -52,12 +52,12 @@
         android:background="@drawable/buttons"
         android:text="Місця для розваг"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/kosiv"
+        app:layout_constraintBottom_toTopOf="@+id/shop_ya"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/kosiv"
+        android:id="@+id/shop_ya"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -68,13 +68,13 @@
         android:background="@drawable/buttons"
         android:text="Шопінг"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/vorokhta"
+        app:layout_constraintBottom_toTopOf="@+id/museum_ya"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/vorokhta"
+        android:id="@+id/museum_ya"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -85,12 +85,12 @@
         android:background="@drawable/buttons"
         android:text="Музеї"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/yaremche"
+        app:layout_constraintBottom_toTopOf="@+id/cinema_ya"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/yaremche"
+        android:id="@+id/cinema_ya"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -99,15 +99,14 @@
         android:layout_marginEnd="35dp"
         android:layout_marginBottom="19dp"
         android:background="@drawable/buttons"
-
         android:text="Кінотеатри"
         android:textColor="#FFFFFF"
-        app:layout_constraintBottom_toTopOf="@+id/bukovel"
+        app:layout_constraintBottom_toTopOf="@+id/food_ya"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/bukovel"
+        android:id="@+id/food_ya"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -124,7 +123,7 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <Button
-        android:id="@+id/top7"
+        android:id="@+id/top7_ya"
         android:layout_width="290dp"
         android:layout_height="40dp"
         android:layout_alignParentLeft="true"
@@ -140,6 +139,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.45"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bukovel" />
+        app:layout_constraintTop_toBottomOf="@+id/food_ya" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
